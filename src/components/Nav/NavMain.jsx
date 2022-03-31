@@ -17,8 +17,8 @@ const NavMain = () => {
 			)}
 			{!isLoggedIn && (
 				<>
-					<NavLink to="/signin">Log in</NavLink>
-					<NavLink to="/signup">Sign Up</NavLink>
+					<NavLink to="/login">Log in</NavLink>
+					<NavLink to="/register">Sign Up</NavLink>
 				</>
 			)}
 		</nav>

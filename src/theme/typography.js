@@ -1,5 +1,5 @@
 export default {
-	fontFamily: "Roboto, Helvetica, Arial, Crimson Pro, serif",
+	fontFamily: "Helvetica, Arial, Crimson Pro, serif",
 	lineHeight: "1.375",
 	letterSpacing: "0.00735em",
 	fontWeightLight: 100,

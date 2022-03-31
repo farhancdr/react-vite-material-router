@@ -4,18 +4,21 @@ import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
-import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
+import PrivateUserRoute from "./auth/ProtectedRoute/PrivateUserRoute";
+import PrivateAdminRoute from "./auth/ProtectedRoute/PrivateAdminRoute";
 
 function App() {
 	return (
 		<div className="App">
-			<NavMain />
 			<Routes>
 				<Route path="/" element={<Home />} />
-				<Route path="/signin" element={<Signin />} />
-				<Route path="/signup" element={<Signup />} />
-				<Route element={<PrivateRoute />}>
+				<Route path="/login" element={<Signin />} />
+				<Route path="/register" element={<Signup />} />
+				<Route element={<PrivateUserRoute />}>
 					<Route path="/profile" element={<Profile />} />
+				</Route>
+				<Route element={<PrivateAdminRoute />}>
+					<Route path="/admin" element={<Profile />} />
 				</Route>
 			</Routes>
 		</div>

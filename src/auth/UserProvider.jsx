@@ -6,7 +6,8 @@ const UserProvider = ({ children }) => {
 	const [auth, setAuth] = useState({
 		currentUser: null,
 		isLoading: true,
-		isLoggedIn: false
+		isLoggedIn: false,
+		currentUserType: null
 	});
 
 	useEffect(() => {
@@ -19,13 +20,28 @@ const UserProvider = ({ children }) => {
 			apiHandler
 				.isLoggedIn(storedToken)
 				.then(user => {
-					setAuth({ currentUser: user, isLoading: false, isLoggedIn: true });
+					setAuth({
+						currentUser: user,
+						isLoading: false,
+						isLoggedIn: true,
+						currentUserType: "admin"
+					});
 				})
 				.catch(e => {
-					setAuth({ currentUser: null, isLoading: false, isLoggedIn: false });
+					setAuth({
+						currentUser: null,
+						isLoading: false,
+						isLoggedIn: false,
+						currentUserType: "null"
+					});
 				});
 		} else {
-			setAuth({ currentUser: null, isLoading: false, isLoggedIn: false });
+			setAuth({
+				currentUser: null,
+				isLoading: false,
+				isLoggedIn: false,
+				currentUserType: "null"
+			});
 		}
 	};
 
@@ -45,6 +61,7 @@ const UserProvider = ({ children }) => {
 		currentUser: auth.currentUser,
 		isLoading: auth.isLoading,
 		isLoggedIn: auth.isLoggedIn,
+		currentUserType: auth.currentUserType,
 		removeUser,
 		storeToken,
 		authenticateUser
