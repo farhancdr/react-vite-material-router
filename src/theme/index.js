@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { red, grey } from "@mui/material/colors";
+import { red, green, blue, yellow } from "@mui/material/colors";
 import typography from "./typography";
 
 // Create a theme instance.
@@ -15,8 +15,8 @@ const theme = createTheme({
 			main: red.A400
 		},
 		text: {
-			primary: grey.A700,
-			secondary: grey.A700
+			primary: "#19857b",
+			secondary: green.A400
 		}
 	},
 	typography
