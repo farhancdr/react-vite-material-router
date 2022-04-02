@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import UserProvider from "./auth/UserProvider";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
@@ -17,11 +17,11 @@ ReactDOM.render(
 		<ThemeProvider theme={theme}>
 			<CssBaseline />
 			<GlobalStyles />
-			<Router>
+			<BrowserRouter>
 				<UserProvider>
 					<App />
 				</UserProvider>
-			</Router>
+			</BrowserRouter>
 		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
