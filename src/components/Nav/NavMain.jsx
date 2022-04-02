@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import useAuth from "../../auth/useAuth";
-import "../../styles/NavMain.css";
+import useAuth from "@/auth/useAuth";
+import "@/styles/NavMain.css";
 
 const NavMain = () => {
 	const { isLoggedIn, currentUser, removeUser } = useAuth();

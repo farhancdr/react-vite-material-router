@@ -1,13 +1,20 @@
 {
 	"env": {
 		"browser": true,
-		"es2021": true
+		"es6": true,
+		"node": true,
+		"jest/globals": true
 	},
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:prettier/recommended"
 	],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
@@ -15,9 +22,12 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": ["react", "prettier"],
+	"plugins": ["react", "simple-import-sort", "prettier"],
 	"rules": {
+		"prettier/prettier": [0, {}, { "usePrettierrc": true }],
 		"react/react-in-jsx-scope": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+		"import/prefer-default-export": 0,
 		"no-unused-vars": "off",
 		"react/prop-types": "off",
 		"linebreak-style": "off"
